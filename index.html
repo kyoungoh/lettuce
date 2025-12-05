@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lettuce Eight</title>
+    <title>OORO | Contact</title>
+    
+    <meta property="og:title" content="OORO | Contact Us">
+    <meta property="og:description" content="OORO에 문의하려면 lettuce@lettuce-eight.com로 연락주세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kyoungoh.github.io/lettuce-eight.com/"> 
     
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     
@@ -14,21 +19,17 @@
             --text-color: #ffffff;
             --font-serif: 'Instrument Serif', serif;
 
-            /* 이전 단계의 최종 폰트 크기 (약 2.535rem) */
-            --previous-final-font-size: 2.535rem; 
-            
-            /* 🚀 최종 텍스트 크기: 이전 크기 * 0.80 (20% 감소) = 약 2.028rem */
-            --final-font-size: calc(var(--previous-final-font-size) * 0.80);
+            /* 폰트 크기 변수 재정의 */
+            --current-font-size: 2.028rem; 
+            --final-font-size: calc(var(--current-font-size) * 0.70); /* 30% 축소 적용 */
+            --logo-final-size: calc(var(--final-font-size) * 8); 
         }
 
         body {
-            /* Vanta 배경을 덮을 기본 설정 */
             position: relative; 
             font-family: var(--font-serif);
             margin: 0;
             text-align: center;
-
-            /* 🚀 콘텐츠를 화면 정중앙에 배치 */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,26 +54,34 @@
             position: relative;
             z-index: 10; 
             padding: 20px;
-            /* 텍스트 간격 조정 */
             display: flex;
             flex-direction: column;
-            gap: 10px; /* 항목 간 기본 간격 */
+            gap: 10px;
         }
         
-        /* OORO 제목 텍스트 (가장 윗줄) */
-        .ooro-title {
-            font-size: var(--final-font-size);
-            margin: 0;
-            font-weight: bold; 
+        /* OORO 로고 이미지 스타일 */
+        .ooro-logo-img {
+            height: auto;
+            width: var(--logo-final-size);
+            display: block;
+            margin: 0 auto 5px auto;
         }
+        
+        /* 🚀 하단 푸터 로고 스타일 */
+        .footer-logo-img {
+            width: calc(var(--final-font-size) * 6); /* 폰트 크기의 6배 정도로 작게 설정 */
+            height: auto;
+            margin-top: 30px; /* 이메일 주소와의 간격 */
+            opacity: 0.7; /* 약간 흐리게 처리 */
+        }
+
 
         /* 웹사이트 링크 스타일 */
         .website-link {
             color: var(--text-color);
             text-decoration: underline;
-            font-size: var(--final-font-size);
+            font-size: var(--final-font-size); 
             display: block; 
-            /* 🚀 간격 띄우기: Contact us와 구분하기 위한 여백 증가 */
             margin-bottom: 40px; 
             transition: color 0.3s ease;
         }
@@ -103,8 +112,11 @@
         
         /* 모바일 환경 크기 조정 */
         @media (max-width: 600px) {
-            .ooro-title, .website-link, .title, .email-link {
+            .website-link, .title, .email-link {
                 font-size: calc(var(--final-font-size) * 0.7);
+            }
+            .ooro-logo-img, .footer-logo-img {
+                width: calc(var(--logo-final-size) * 0.7);
             }
         }
     </style>
@@ -113,7 +125,7 @@
     <div id="vanta-bg"></div> 
 
     <div class="content-group">
-        <div class="ooro-title">OORO</div>
+        <img class="ooro-logo-img" src="ooro_logo.png" alt="OORO Logo">
 
         <a href="https://www.oorosoju.com" class="website-link" target="_blank">
             www.oorosoju.com
@@ -124,6 +136,8 @@
         <a href="mailto:lettuce@lettuce-eight.com" class="email-link">
             lettuce@lettuce-eight.com
         </a>
+        
+        <img class="footer-logo-img" src="lettuceeight.png" alt="Lettuce Eight Logo">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
@@ -139,8 +153,8 @@
                     gyroControls: false,
                     minHeight: 200.00,
                     minWidth: 200.00,
-                    highlightColor: 0x936c0c,
-                    midtoneColor: 0xe3bd38,
+                    highlightColor: 0xffffff,
+                    midtoneColor: 0xdcc72f,
                     lowlightColor: 0xc5c8c2,
                     baseColor: 0x897755,
                     zoom: 0.60
