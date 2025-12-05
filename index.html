@@ -19,10 +19,11 @@
             --text-color: #ffffff;
             --font-serif: 'Instrument Serif', serif;
 
-            /* 폰트 크기 변수 재정의 */
+            /* 폰트 크기 변수 */
             --current-font-size: 2.028rem; 
             --final-font-size: calc(var(--current-font-size) * 0.70); /* 30% 축소 적용 */
             --logo-final-size: calc(var(--final-font-size) * 8); 
+            --footer-logo-width: calc(var(--final-font-size) * 6); /* Lettuce Eight 로고 크기 */
         }
 
         body {
@@ -59,20 +60,25 @@
             gap: 10px;
         }
         
-        /* OORO 로고 이미지 스타일 */
+        /* OORO 로고 이미지 스타일 (가운데 정렬) */
         .ooro-logo-img {
             height: auto;
             width: var(--logo-final-size);
             display: block;
-            margin: 0 auto 5px auto;
+            margin: 0 auto 5px auto; /* 가운데 정렬 및 아래 간격 */
         }
         
-        /* 🚀 하단 푸터 로고 스타일 */
+        /* 🚀 Lettuce Eight 로고 스타일 (푸터 정렬) */
         .footer-logo-img {
-            width: calc(var(--final-font-size) * 6); /* 폰트 크기의 6배 정도로 작게 설정 */
+            position: fixed; /* 뷰포트에 고정 */
+            bottom: 20px; /* 하단에서 20px 마진 */
+            left: 50%; /* 가로 50% 위치 */
+            transform: translateX(-50%); /* 정확한 가로 중앙 정렬 */
+            z-index: 5; /* 배경 위에, 메인 콘텐츠 아래에 배치 */
+            
+            width: var(--footer-logo-width); 
             height: auto;
-            margin-top: 30px; /* 이메일 주소와의 간격 */
-            opacity: 0.7; /* 약간 흐리게 처리 */
+            opacity: 0.7; 
         }
 
 
@@ -115,7 +121,7 @@
             .website-link, .title, .email-link {
                 font-size: calc(var(--final-font-size) * 0.7);
             }
-            .ooro-logo-img, .footer-logo-img {
+            .ooro-logo-img {
                 width: calc(var(--logo-final-size) * 0.7);
             }
         }
@@ -125,7 +131,7 @@
     <div id="vanta-bg"></div> 
 
     <div class="content-group">
-        <img class="ooro-logo-img" src="ooro_logo.png" alt="OORO Logo">
+        <img class="ooro-logo-img" src="ooro.png" alt="OORO Logo">
 
         <a href="https://www.oorosoju.com" class="website-link" target="_blank">
             www.oorosoju.com
@@ -137,8 +143,9 @@
             lettuce@lettuce-eight.com
         </a>
         
-        <img class="footer-logo-img" src="lettuceeight.png" alt="Lettuce Eight Logo">
     </div>
+
+    <img class="footer-logo-img" src="lettuceeight.png" alt="Lettuce Eight Logo">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
