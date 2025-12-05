@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Lettuce Eight</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;0&display=swap" rel="stylesheet">
-
+    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
     <style>
-        /* 기본 설정 및 색상 */
+        /* 기본 설정 및 색상 변수 */
         :root {
-            --bg-color: #403932; /* 배경색 */
-            --text-color: #b4b0a7; /* 텍스트색 */
-            --font-serif: 'Instrument Serif', serif;
+            --bg-color: #403932; /* 배경색: 짙은 회색 */
+            --text-color: #b4b0a7; /* 텍스트색: 밝은 베이지 */
+            --font-serif: 'Instrument Serif', serif; /* 폰트 이름 */
         }
 
         body {
+            /* 요청하신 배경색과 텍스트색 적용 */
             background-color: var(--bg-color);
             color: var(--text-color);
+            
+            /* 폰트 적용 */
             font-family: var(--font-serif);
+            
+            /* 중앙 정렬을 위한 설정 */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            height: 100vh; /* 뷰포트 전체 높이 사용 */
             margin: 0;
             text-align: center;
         }
 
         .container {
+            /* 텍스트가 담길 영역 */
             padding: 20px;
         }
 
+        /* 큰 제목 스타일 (Contact us) */
         .title {
-            font-size: 3.5rem; 
+            font-size: 3.5rem; /* 글씨 크게 설정 */
             margin-bottom: 0.5em; 
             font-weight: normal; 
         }
 
+        /* 이메일 주소 스타일 */
         .email-link {
+            /* 이메일 링크의 색상은 요청하신 텍스트색으로 통일 */
             color: var(--text-color); 
-            text-decoration: none; 
-            font-size: 2.5rem; 
+            text-decoration: none; /* 기본 밑줄 제거 */
+            font-size: 2.5rem; /* 제목보다 살짝 작지만 여전히 크게 */
             transition: color 0.3s;
         }
 
+        /* 마우스 오버 시 스타일 변경 */
         .email-link:hover {
-            color: #ffffff; 
+            color: #ffffff; /* 마우스 오버 시 흰색으로 */
             text-decoration: underline;
         }
 
+        /* 모바일 환경을 위한 글꼴 크기 조정 */
         @media (max-width: 600px) {
             .title {
                 font-size: 2.5rem;
@@ -62,7 +73,7 @@
 <body>
     <div class="container">
         <div class="title">Contact us</div>
-
+        
         <a href="mailto:lettuce@lettuce-eight.com" class="email-link">
             lettuce@lettuce-eight.com
         </a>
