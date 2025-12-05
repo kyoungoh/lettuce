@@ -47,7 +47,7 @@
         }
 
         /* ---------------------------------- */
-        /* 새로운 디자인 요소 스타일 */
+        /* 디자인 요소 스타일 */
         /* ---------------------------------- */
         
         /* 1. 로고 스타일 */
@@ -55,8 +55,7 @@
             margin-bottom: 20px;
         }
         .logo-svg {
-            /* 원본 SVG의 크기를 고려하여 화면에 적절히 보이도록 크기 지정 */
-            width: 150px; 
+            width: 150px; /* 로고 크기 */
             height: auto;
             display: block;
         }
@@ -78,70 +77,4 @@
             width: 80%; /* 가로 80% */
             height: 1px; /* 아주 얇은 라인 */
             background-color: var(--text-color); /* 흰색 */
-            margin: 30px auto; /* 상하 간격 및 중앙 정렬 */
-        }
-
-        /* 4. Contact us 제목 스타일 */
-        .title {
-            font-size: 3.5rem;
-            margin-bottom: 0.5em; 
-            font-weight: normal; 
-        }
-        
-        /* 5. 이메일 링크 및 일렁이는 밑줄 효과 */
-        .email-link {
-            color: var(--text-color); 
-            font-size: 2.5rem; 
-            transition: color 0.3s;
-            
-            /* 일렁이는 밑줄 효과를 위한 설정 */
-            position: relative;
-            display: inline-block;
-            text-decoration: none; /* 기본 HTML 밑줄 제거 */
-            padding-bottom: 5px; /* 밑줄과 텍스트 간격 확보 */
-            border-bottom: 2px solid var(--text-color); /* 기본 밑줄 */
-        }
-
-        /* 마우스 오버 시 밑줄 일렁이는 애니메이션 */
-        .email-link:hover {
-            color: #ccc;
-            /* 마우스 오버 시 기본 밑줄 투명하게 */
-            border-bottom-color: transparent; 
-        }
-        
-        /* 가상 요소로 동적인 밑줄 효과 구현 */
-        .email-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--text-color);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-in-out, opacity 0.3s;
-            transform: scaleX(1); /* 기본적으로 밑줄이 보이게 */
-            opacity: 1;
-        }
-
-        .email-link:hover::after {
-            /* 밑줄이 일렁이거나 움직이는 효과 (여기서는 살짝 커지면서 깜빡이는 효과) */
-            transform: scaleX(1.1); 
-            opacity: 0.8;
-        }
-        
-        /* 모바일 환경을 위한 글꼴 크기 조정 */
-        @media (max-width: 600px) {
-            .title {
-                font-size: 2.5rem;
-            }
-            .email-link {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div id="vanta-bg"></div> 
-
-    <div class="content-container">
+            margin:
